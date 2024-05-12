@@ -12,9 +12,7 @@ export default function AuthForm() {
   const form = useForm()
 
   const handleSubmit = form.handleSubmit(async data => {
-    
     try {
-      console.log(data)
       await signIn('email', {email: data.email, redirect: false})
       toast({title: 'Magic Link enviado', description:'Magik Link enviado para o seu email'})
     } catch (error) {
